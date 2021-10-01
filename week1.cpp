@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 const int ALPHABET_LEN = 26;
 
 
@@ -141,8 +142,36 @@ int compare_arrays()
 	return 1;
 }
 
+void replaceLetters()
+{
+	char m, n;
+	char string[125];
+	
+	printf("Nhap chuoi: ");
+	fflush(stdin);
+	scanf("%124s", string);
+	
+	printf("\nNhap ky tu tim kiem: ");
+	fflush(stdin);
+	scanf("%c", &m);
+	
+	printf("\nNhap ky tu thay the: ");
+	fflush(stdin);
+	scanf("%c", &n);
+	
+	for(int i = 0; i < strlen(string); i++)
+	{
+		if(string[i] == m)
+		{
+			string[i] = n;
+		}
+	}
+	
+	printf("\nChuoi sau khi thay the: %s", string);
+}
+
 int main()
 {
-	printf("Ket qua so sanh: %d", compare_arrays());
+	replaceLetters();
 	return 0;
 }
