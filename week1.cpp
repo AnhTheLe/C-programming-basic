@@ -94,7 +94,7 @@ bool soSanh2Mang()
 
 void lettersTime()
 {
-		int i = 0;
+	int i = 0;
 	int count[ALPHABET_LEN] = {0};
 	char c = '\0';
 	printf("Input a line of text: \n");
@@ -119,8 +119,30 @@ void lettersTime()
 	}
 }
 
+int compare_arrays()
+{
+	int n = 0;
+	int numbers[1000];
+	printf("Nhap so phan tu cua mang: ");
+	fflush(stdin);
+	scanf("%d", &n);
+	
+	printf("Nhap mang thu: \n");
+	nhapMang(n, numbers);
+	
+	for(int i = 0; i < n - 1; i++)
+	{
+		if(numbers[i] != numbers[i +1])
+		{
+			return 0;
+		}
+	}
+	
+	return 1;
+}
+
 int main()
 {
-	printf("Ket qua so sanh: %d", soSanh2Mang());
+	printf("Ket qua so sanh: %d", compare_arrays());
 	return 0;
 }
