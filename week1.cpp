@@ -1,6 +1,16 @@
 #include <stdio.h>
 const int ALPHABET_LEN = 26;
 
+
+void nhapMang(int n, int numbers[])
+{
+	for(int i = 0; i < n; i++)
+	{
+		scanf("%d", &numbers[i]);
+		fflush(stdin);
+	}
+}
+
 void reverse()
 {
 	int i, A[10];
@@ -56,6 +66,32 @@ void xoaPhanTuTrung()
 	
 }
 
+bool soSanh2Mang()
+{
+	int n = 0;
+	int numbers1[1000];
+	int numbers2[1000];
+	printf("Nhap so phan tu cua mang: ");
+	fflush(stdin);
+	scanf("%d", &n);
+	
+	printf("Nhap mang thu 1: \n");
+	nhapMang(n, numbers1);
+	
+	printf("Nhap mang thu 2: \n");
+	nhapMang(n, numbers2);
+	
+	for(int i = 0; i < n; i++)
+	{
+		if(numbers1[i] != numbers2[i])
+		{
+			return false;
+		}
+	}
+	
+	return true;
+}
+
 void lettersTime()
 {
 		int i = 0;
@@ -85,6 +121,6 @@ void lettersTime()
 
 int main()
 {
-	xoaPhanTuTrung();
+	printf("Ket qua so sanh: %d", soSanh2Mang());
 	return 0;
 }
