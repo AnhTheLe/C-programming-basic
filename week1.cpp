@@ -170,8 +170,20 @@ void replaceLetters()
 	printf("\nChuoi sau khi thay the: %s", string);
 }
 
+void tachSo()
+{
+	double number;
+	printf("Nhap so: ");
+	fflush(stdin);
+	scanf("%lf", &number);
+	
+	printf("Phan nguyen la: %d\n", (int)number);
+	printf("Phan thap phan la: %lf", number - (int)number);
+	
+}
+
 int main()
 {
-	replaceLetters();
+	tachSo();
 	return 0;
 }
