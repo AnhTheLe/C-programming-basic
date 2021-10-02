@@ -1,6 +1,9 @@
 #include <stdio.h>
-
-
+/*
+- Huong dan su dung:
+- Sau khi build, go: week1_homework "content.txt"
+- voi content.txt la noi dung file can doc
+*/
 int main(int argc, char * argv[])
 {
 	if(argc != 2)
