@@ -12,7 +12,7 @@ int main()
 
 	printf("Thong tin danh ba o vi tri thu 2 va vi tri thu 3 \n");
 	FILE * fin;
-	fin = fopen("danh_ba.dat", "rb");
+	fin = fopen("danh_ba.dat", "r+b");
 	if(fin == NULL)
 	{
 		printf("Loi mo file\n");
@@ -35,6 +35,12 @@ int main()
 		printf("\tSDT: %s\n", danh_ba[i].phone);
 		printf("\tEmail: %s\n", danh_ba[i].email);
 	}
+	
+	strcpy(danh_ba[1].name, "BN2002");
+	strcpy(danh_ba[1].phone, "01234567756");
+	strcpy(danh_ba[1].email, "doanhcms@gmail.com");
+	fseek(fin, 1 * sizeof(thong_tin_lien_lac), SEEK_SET);
+	fwrite(danh_ba, sizeof(thong_tin_lien_lac), 2, fin);
 	
 	fclose(fin);
 	return 0;
