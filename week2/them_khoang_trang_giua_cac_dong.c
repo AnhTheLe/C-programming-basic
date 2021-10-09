@@ -19,7 +19,7 @@ int main()
 	{
 		i++;
 		fputc(c, fout);
-		if(c == '\0')
+		if(c == '\n')
 			fputc('\n', fout);
 		if(i > 10000) break; // Chong tran bo nho neu co loi
 	}
