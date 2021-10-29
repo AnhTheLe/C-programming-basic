@@ -30,8 +30,3 @@ Eltype pop(StackType stack)
 	else 
 		return stack[--top];
 }
-
-int main()
-{
-	return 0;
-}

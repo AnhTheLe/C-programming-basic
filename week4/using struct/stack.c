@@ -8,7 +8,7 @@ void Initialze(StackType *stack)
 
 int empty(StackType stack)
 {
-	return stack.top == 1;
+	return stack.top == 0;
 }
 
 int full(StackType stack)
@@ -30,9 +30,4 @@ Eltype pop(StackType * stack)
 		printf("stack underflow");
 	else 
 		return (*stack).storage[--(*stack).top];
-}
-
-int main()
-{
-	return 0;
 }
